@@ -1,0 +1,22 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+
+# Environment variables
+.env
+
+# Alembic (keep migrations, ignore runtime cache)
+alembic/versions/__pycache__/
+
+# Logs
+*.log
+
+# IDE / Editor
+.vscode/
+.idea/
