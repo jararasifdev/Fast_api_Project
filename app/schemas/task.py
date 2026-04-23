@@ -1,3 +1,4 @@
+from datetime import datetime
 from pydantic import BaseModel
 from datetime import date
 
@@ -24,7 +25,7 @@ class TaskOut(BaseModel):
     status: str
     priority: str
     due_date: date
-    created_at: date
+    created_at: datetime
 
     class Config:
         from_attributes = True
