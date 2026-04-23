@@ -1,7 +1,8 @@
-from sqlalchemy import Column, Integer, String, Date, ForeignKey
+from sqlalchemy import Column, Integer, String, Date, ForeignKey,DateTime
 from sqlalchemy.orm import relationship
 from database import Base
 from app.models.task_tag import task_tags
+from datetime import datetime
 
 class Task(Base):
     __tablename__ = "tasks"
@@ -12,7 +13,7 @@ class Task(Base):
     status = Column(String)
     priority = Column(String)
     due_date = Column(Date)
-    created_at= Column(Date)
+    created_at = Column(DateTime, default=datetime.utcnow)
     user_id = Column(Integer, ForeignKey("users.id"))
 
     notes = relationship("Note", back_populates="task", cascade="all, delete")
