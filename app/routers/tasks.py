@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException,Query
 from sqlalchemy.orm import Session
 from database import get_db
 from app.models.task import Task
@@ -77,8 +77,8 @@ def delete_task(
 
 @router.get("/",response_model=PaginatedTasks)
 def get_tasks(
-    page: int = 1,
-    limit: int = 10,
+    page: int = Query(1, ge=1),
+    limit: int = Query(10, ge=1, le=100),
     status: str = None,
     priority: str = None,
     search: str = None,
