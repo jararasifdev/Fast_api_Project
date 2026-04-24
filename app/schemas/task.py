@@ -27,7 +27,7 @@ class TaskUpdate(BaseModel):
 class TaskCreate(BaseModel):
     title: str = Field(min_length=1,max_length=200)
     description: str = Field(min_length=1)
-    status: StatusEnum
+    status: StatusEnum 
     priority: PriorityEnum
     due_date: date
 
@@ -35,8 +35,8 @@ class TaskOut(BaseModel):
     id: int
     title: str
     description: str
-    status: StatusEnum
-    priority: PriorityEnum
+    status: Optional[StatusEnum] = None
+    priority: Optional[PriorityEnum]=None
     due_date: date
     created_at: datetime
 
