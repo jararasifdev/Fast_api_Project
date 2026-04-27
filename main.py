@@ -53,7 +53,6 @@ async def general_exception_handler(request: Request, exc: Exception):
         content={"detail": "Internal server error. Please try again later."}
     )
 
-# Health check endpoint
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "message": "Server is responsive"}
