@@ -18,8 +18,8 @@ class PriorityEnum(str, Enum):
     high = "high"
 
 class TaskUpdate(BaseModel):
-    title: str = Field(min_length=1,max_length=200)
-    description: str = Field(min_length=1)
+    title: Optional[str] = Field(default=None, min_length=1, max_length=200)
+    description: Optional[str] = Field(default=None, min_length=1)
     status: Optional[StatusEnum] = None
     priority: Optional[PriorityEnum] = None
     due_date: Optional[date] = None
