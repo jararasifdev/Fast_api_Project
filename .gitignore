@@ -10,6 +10,8 @@ venv/
 
 # Environment variables
 .env
+db.env
+api.env
 
 # Alembic (keep migrations, ignore runtime cache)
 alembic/versions/__pycache__/
